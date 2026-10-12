@@ -1,0 +1,26 @@
+name: Catalog setup
+on:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Check shell
+        run: |
+          bash -n setup.sh
+          shellcheck setup.sh
+      - name: Initialize recorded catalogs twice
+        run: |
+          ./setup.sh
+          ./setup.sh
+          git diff --exit-code
+          git submodule status --recursive
+      - name: Check catalog tracking branches
+        run: |
+          test "$(git config -f .gitmodules submodule.skills-catalog.branch)" = main
+          test "$(git config -f .gitmodules submodule.mcps-catalog.branch)" = main

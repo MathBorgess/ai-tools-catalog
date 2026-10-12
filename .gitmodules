@@ -1,0 +1,8 @@
+[submodule "skills-catalog"]
+	path = skills-catalog
+	url = https://github.com/MathBorgess/skills-catalog.git
+	branch = main
+[submodule "mcps-catalog"]
+	path = mcps-catalog
+	url = https://github.com/MathBorgess/mcps-catalog.git
+	branch = main
