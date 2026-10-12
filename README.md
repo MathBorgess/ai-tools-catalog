@@ -80,6 +80,8 @@ Standalone CLIs have their own setup. For video-reference, follow the upstream R
 
 Read [AGENTS.md](AGENTS.md). For a setup request: run `./setup.sh --latest`, identify the target agent, then follow the relevant catalog's installation instructions and each selected server's prerequisites. Keep credentials in the user's environment. Report checkout success, plugin installation, and runtime verification separately.
 
+For the pending video-reference release, use the [review-stage setup guide](docs/video-reference-preview.md). It explains how to evaluate the CLI and companion skill without changing this catalog's main-tracking submodule pins.
+
 ## Maintenance
 
 Tool changes belong in the relevant upstream repository. After they merge to its `main`, update the pointers here through a PR:
