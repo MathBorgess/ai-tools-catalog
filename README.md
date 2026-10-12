@@ -20,7 +20,7 @@ cd ai-tools-catalog
 
 `--latest` fetches `main` for all direct submodules. Nested dependencies keep the commits selected by their parent catalog. Repeat the same command to update later.
 
-The initial video-reference implementation is under review upstream. Its gitlink tracks the bootstrap commit on `main`; cloning this aggregator does not yet install a working CLI. Follow the upstream implementation PR for evaluation. Once that PR merges, `--latest` retrieves the implementation, and a separate catalog PR can record its reviewed commit.
+The initial video-reference implementation is under review upstream. Its gitlink tracks the bootstrap commit on `main`; cloning this aggregator does not yet install a working CLI. Follow the [CLI implementation PR](https://github.com/MathBorgess/video-reference/pull/1) and [companion skill PR](https://github.com/MathBorgess/skills-catalog/pull/72) for evaluation. Once that PR merges, `--latest` retrieves the implementation, and a separate catalog PR can record its reviewed commit.
 
 For the exact versions reviewed and recorded in this repository, run `./setup.sh` instead. A recursive clone also downloads those recorded versions:
 
