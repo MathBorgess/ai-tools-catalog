@@ -1,11 +1,12 @@
 # ai-tools-catalog
 
-One checkout for [Matheus Borges](https://github.com/MathBorgess)'s agent tools. This repository groups two public catalogs as Git submodules; each catalog keeps its own code, releases, and installation instructions.
+One checkout for [Matheus Borges](https://github.com/MathBorgess)'s agent tools. This repository groups public catalogs and standalone tools as Git submodules; each upstream keeps its own code, releases, and installation instructions.
 
 | Catalog | Contents | Install instructions |
 | --- | --- | --- |
 | [skills-catalog](skills-catalog/) | Agent workflows for engineering, creativity, and experiments | [Skills setup](skills-catalog/README.md#install) |
 | [mcps-catalog](mcps-catalog/) | MCP servers, packaged as Claude Code plugins | [MCP setup](mcps-catalog/README.md#install) |
+| [video-reference](video-reference/) | Local video reference libraries and HyperFrames direction CLI | [CLI repository](https://github.com/MathBorgess/video-reference) |
 
 ## Get everything
 
@@ -17,7 +18,9 @@ cd ai-tools-catalog
 ./setup.sh --latest
 ```
 
-`--latest` fetches `main` for both catalogs. Nested dependencies keep the commits selected by their parent catalog. Repeat the same command to update later.
+`--latest` fetches `main` for all direct submodules. Nested dependencies keep the commits selected by their parent catalog. Repeat the same command to update later.
+
+The initial video-reference implementation is under review upstream. Its gitlink tracks the bootstrap commit on `main`; cloning this aggregator does not yet install a working CLI. Follow the upstream implementation PR for evaluation. Once that PR merges, `--latest` retrieves the implementation, and a separate catalog PR can record its reviewed commit.
 
 For the exact versions reviewed and recorded in this repository, run `./setup.sh` instead. A recursive clone also downloads those recorded versions:
 
@@ -73,6 +76,8 @@ Choose the skills and target agents in the installer. For MCP clients other than
 
 ## Agent entry point
 
+Standalone CLIs have their own setup. For video-reference, follow the upstream README once the implementation reaches main, then install the companion skill from skills-catalog. This wrapper does not install Node packages, FFmpeg, skills, or providers implicitly.
+
 Read [AGENTS.md](AGENTS.md). For a setup request: run `./setup.sh --latest`, identify the target agent, then follow the relevant catalog's installation instructions and each selected server's prerequisites. Keep credentials in the user's environment. Report checkout success, plugin installation, and runtime verification separately.
 
 ## Maintenance
@@ -85,7 +90,7 @@ git pull --ff-only
 git switch -c codex/update-catalogs
 ./setup.sh --latest
 git diff --submodule=log
-git add skills-catalog mcps-catalog
+git add skills-catalog mcps-catalog video-reference
 git commit -m "Update catalog pointers"
 git push -u origin HEAD
 gh pr create --repo MathBorgess/ai-tools-catalog

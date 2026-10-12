@@ -11,7 +11,7 @@ case "${1:-}" in
     cat <<'HELP'
 Usage: ./setup.sh [--latest]
   (default) Initialize all submodules at the commits recorded by this checkout.
-  --latest  Fetch main for skills-catalog and mcps-catalog, then initialize their
+  --latest  Fetch main for skills-catalog, mcps-catalog and video-reference, then initialize their
             nested submodules at the versions recorded by those repositories.
 Does not install plugins, alter agent settings, commit, push, or merge.
 HELP
@@ -45,13 +45,14 @@ if [ "$mode" = pinned ]; then
   git submodule sync --recursive
   git submodule update --init --recursive
 else
-  # --remote applies ONLY to the two direct catalogs. Nested upstream pins stay
+  # --remote applies ONLY to the direct repositories. Nested upstream pins stay
   # paired with the dependency versions selected by mcps-catalog itself.
   git submodule sync --recursive
-  git submodule update --init --remote --checkout -- skills-catalog mcps-catalog
+  git submodule update --init --remote --checkout -- skills-catalog mcps-catalog video-reference
   git submodule sync --recursive
   git -C skills-catalog submodule update --init --recursive
   git -C mcps-catalog submodule update --init --recursive
+  git -C video-reference submodule update --init --recursive
 fi
 
 git submodule status --recursive
