@@ -6,7 +6,7 @@ One checkout for [Matheus Borges](https://github.com/MathBorgess)'s agent tools.
 | --- | --- | --- |
 | [skills-catalog](skills-catalog/) | Agent workflows for engineering, creativity, and experiments | [Skills setup](skills-catalog/README.md#install) |
 | [mcps-catalog](mcps-catalog/) | MCP servers, packaged as Claude Code plugins | [MCP setup](mcps-catalog/README.md#install) |
-| [video-reference](video-reference/) | Local video reference libraries and HyperFrames direction CLI | [CLI repository](https://github.com/MathBorgess/video-reference) |
+| [video-reference](video-reference/) | Local video reference libraries and Remotion direction CLI | [CLI repository](https://github.com/MathBorgess/video-reference) |
 
 ## Get everything
 
@@ -19,8 +19,6 @@ cd ai-tools-catalog
 ```
 
 `--latest` fetches `main` for all direct submodules. Nested dependencies keep the commits selected by their parent catalog. Repeat the same command to update later.
-
-The initial video-reference implementation is under review upstream. Its gitlink tracks the bootstrap commit on `main`; cloning this aggregator does not yet install a working CLI. Follow the [CLI implementation PR](https://github.com/MathBorgess/video-reference/pull/1) and [companion skill PR](https://github.com/MathBorgess/skills-catalog/pull/72) for evaluation. Once that PR merges, `--latest` retrieves the implementation, and a separate catalog PR can record its reviewed commit.
 
 For the exact versions reviewed and recorded in this repository, run `./setup.sh` instead. A recursive clone also downloads those recorded versions:
 
@@ -76,11 +74,11 @@ Choose the skills and target agents in the installer. For MCP clients other than
 
 ## Agent entry point
 
-Standalone CLIs have their own setup. For video-reference, follow the upstream README once the implementation reaches main, then install the companion skill from skills-catalog. This wrapper does not install Node packages, FFmpeg, skills, or providers implicitly.
+Standalone CLIs have their own setup. For video-reference, follow its [README](video-reference/README.md), then install the companion skill from skills-catalog. This wrapper does not install Node packages, FFmpeg, skills, or providers implicitly.
 
 Read [AGENTS.md](AGENTS.md). For a setup request: run `./setup.sh --latest`, identify the target agent, then follow the relevant catalog's installation instructions and each selected server's prerequisites. Keep credentials in the user's environment. Report checkout success, plugin installation, and runtime verification separately.
 
-For the pending video-reference release, use the [review-stage setup guide](docs/video-reference-preview.md). It explains how to evaluate the CLI and companion skill without changing this catalog's main-tracking submodule pins.
+For video production, follow the [video-reference and Remotion setup guide](docs/video-reference-setup.md). The first pass produces a second-by-second plan and a complete editable composition, then opens Remotion Studio for human-led adjustments.
 
 ## Maintenance
 

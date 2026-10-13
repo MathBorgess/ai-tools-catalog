@@ -11,8 +11,8 @@ case "${1:-}" in
     cat <<'HELP'
 Usage: ./setup.sh [--latest]
   (default) Initialize all submodules at the commits recorded by this checkout.
-  --latest  Fetch main for skills-catalog, mcps-catalog and video-reference, then initialize their
-            nested submodules at the versions recorded by those repositories.
+  --latest  Fetch main for skills-catalog, mcps-catalog and video-reference,
+            then initialize nested submodules at their recorded versions.
 Does not install plugins, alter agent settings, commit, push, or merge.
 HELP
     exit 0 ;;

@@ -24,3 +24,4 @@ jobs:
         run: |
           test "$(git config -f .gitmodules submodule.skills-catalog.branch)" = main
           test "$(git config -f .gitmodules submodule.mcps-catalog.branch)" = main
+          test "$(git config -f .gitmodules submodule.video-reference.branch)" = main
