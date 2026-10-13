@@ -28,11 +28,11 @@ The Remotion project has its own dependencies. The production agent follows that
 
 Ask the agent to use the selected reference and project context to:
 
-1. Write a second-by-second plan: the hook in seconds 0–3, captions, visual elements and timing between image and sound.
+1. Write `REVIEW.md` with a second-by-second plan: the hook in seconds 0–3, captions, visual elements and timing between image and sound.
 2. Build the complete editable Remotion composition, retaining reference and authorship information. Use a 1080 × 1920 canvas, Instagram safe areas and unchanged source colors; do not introduce color correction.
 3. Open Remotion Studio. The human reviews the full first pass and directs subsequent adjustments with the agent's help.
 
-Media transcoding, transcription and preliminary cuts are not mandatory stages. Use them only when the task needs them. Missing audio or timing evidence remains unknown; an editable composition does not prove audiovisual fidelity.
+Media transcoding, transcription and preliminary cuts are not mandatory stages. Use them only when the task needs them, and never convert footage automatically. If the pipeline cannot preserve source color, report that constraint instead of silently converting it. Missing audio or timing evidence remains unknown; an editable composition does not prove audiovisual fidelity.
 
 ## Reuse a local reference library
 
