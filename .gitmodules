@@ -10,3 +10,7 @@
 	path = video-reference
 	url = https://github.com/MathBorgess/video-reference.git
 	branch = main
+[submodule "arena"]
+	path = arena
+	url = https://github.com/MathBorgess/arena.git
+	branch = main
