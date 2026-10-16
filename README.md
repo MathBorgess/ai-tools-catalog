@@ -7,6 +7,7 @@ One checkout for [Matheus Borges](https://github.com/MathBorgess)'s agent tools.
 | [skills-catalog](skills-catalog/) | Agent workflows for engineering, creativity, and experiments | [Skills setup](skills-catalog/README.md#install) |
 | [mcps-catalog](mcps-catalog/) | MCP servers, packaged as Claude Code plugins | [MCP setup](mcps-catalog/README.md#install) |
 | [video-reference](video-reference/) | Local video reference libraries and Remotion direction CLI | [CLI repository](https://github.com/MathBorgess/video-reference) |
+| [arena](arena/) | Text proposals through MCP, workflow in the harness conversation, and a text-only viewer with cursor selection | [Arena repository](https://github.com/MathBorgess/arena) |
 
 ## Get everything
 

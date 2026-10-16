@@ -22,6 +22,7 @@ jobs:
           git submodule status --recursive
       - name: Check catalog tracking branches
         run: |
-          test "$(git config -f .gitmodules submodule.skills-catalog.branch)" = main
-          test "$(git config -f .gitmodules submodule.mcps-catalog.branch)" = main
-          test "$(git config -f .gitmodules submodule.video-reference.branch)" = main
+          git config -f .gitmodules --get-regexp '^submodule\..*\.branch$' |
+            while read -r key branch; do
+              test "$branch" = main
+            done
